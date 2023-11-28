@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000" ,  "http://amzvistas.com" ,  "*"],
+    origin: ["http://amzvistas.com" ,  "*"],
     credentials: true,
   })
 );
