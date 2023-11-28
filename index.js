@@ -6,12 +6,9 @@ const app = express();
 const port = 8000;
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["https://amzvistas.com/" ,  "http://localhost:3000" ,   "*"],
-    credentials: true,
-  })
-);
+app.use(cors())
+app.options('*', cors());
+
 
 
 const transporter = nodemailer.createTransport({
