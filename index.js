@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://amzvistas.com" ,  "*"],
+    origin: ["https://amzvistas.com/" ,  "http://localhost:3000" ,   "*"],
     credentials: true,
   })
 );
@@ -21,6 +21,10 @@ const transporter = nodemailer.createTransport({
     pass: 'abozcchwagyfqziw',
   },
 });
+
+app.get('/' , (req,res) =>{
+res.send("Server Start Succesfully!!!")
+})
 app.post('/api/messages', (req, res) => {
   const { name, email, textarea } = req.body;
 console.log(name)
