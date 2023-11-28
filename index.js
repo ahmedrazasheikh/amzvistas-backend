@@ -23,6 +23,9 @@ const transporter = nodemailer.createTransport({
 });
 app.post('/api/messages', (req, res) => {
   const { name, email, textarea } = req.body;
+console.log(name)
+console.log(email)
+console.log(textarea)
 
   // Validate input
   if (!name || !email || !textarea) {
