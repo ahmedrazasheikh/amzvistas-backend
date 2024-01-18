@@ -9,8 +9,6 @@ app.use(express.json());
 app.use(cors())
 app.options('*', cors());
 
-
-
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -23,9 +21,10 @@ app.get('/' , (req,res) =>{
 res.send("Server Start Succesfully!!!")
 })
 app.post('/api/messages', (req, res) => {
-  const { name, email, textarea } = req.body;
+  const { name, email, textarea , number} = req.body;
 console.log(name)
 console.log(email)
+console.log(number)
 console.log(textarea)
 
   // Validate input
@@ -72,6 +71,7 @@ console.log(textarea)
               <h2>Contact Information:</h2>
               <p><strong>Name:</strong> ${name}</p>
               <p><strong>Email:</strong> ${email}</p>
+              <p><strong>Phone Number:</strong> ${number}</p>
               <p><strong>Message:</strong></p>
               <p>${textarea}</p>
             </div>
