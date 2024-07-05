@@ -24,15 +24,15 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/messages', (req, res) => {
-  const { name, email, contactNo, date, message } = req.body;
+  const { name, email, phone , date, message } = req.body;
   console.log(name);
   console.log(email);
-  console.log(contactNo);
+  console.log(phone);
   console.log(date);
   console.log(message);
 
   // Validate input
-  if (!name || !email || !contactNo || !date || !message) {
+  if (!name || !email || !phone || !date || !message) {
     return res.status(400).json({ error: 'Please provide all required fields.' });
   }
 
@@ -75,7 +75,7 @@ app.post('/api/messages', (req, res) => {
             <h2>Contact Information:</h2>
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Phone Number:</strong> ${contactNo}</p>
+            <p><strong>Phone Number:</strong> ${phone}</p>
             <p><strong>Date:</strong> ${date}</p>
             <p><strong>Message:</strong></p>
             <p>${message}</p>
