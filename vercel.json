@@ -7,13 +7,7 @@
         }
     ],
     "routes": [
-        {
-            "src": "/api/messages",
-            "dest": "/api/messages.js"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/"
-        }
+        { "src": "/api/messages", "dest": "/index.js" },
+        { "src": "/", "dest": "/index.js" }
     ]
 }
